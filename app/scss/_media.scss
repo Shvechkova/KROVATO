@@ -6,6 +6,7 @@
 
 @media (max-width: 768px) {
   .footer {
+    
     & .container {
       padding: 0;
     }
@@ -17,6 +18,9 @@
     text-align: center;
     & li{
         padding-bottom: 20px;
+    }
+    & h4{
+      pointer-events: all;
     }
   }
 
