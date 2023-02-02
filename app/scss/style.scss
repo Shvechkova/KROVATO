@@ -8,10 +8,10 @@
 
 .header {
   background-color: #fff;
-  height: 220px;
+  //   height: 220px;
   color: $Grey;
 }
-.header__inner-top{
+.header__inner-top {
   border-bottom: 2px solid $Light;
 }
 .header-top {
@@ -27,7 +27,7 @@
     display: flex;
   }
 
-  &-item+.header-top__left-item {
+  &-item + .header-top__left-item {
     padding-left: 30px;
   }
 }
@@ -40,7 +40,7 @@
   &-help {
     display: flex;
 
-    &_img+.header-top__right-help_img {
+    &_img + .header-top__right-help_img {
       padding-left: 10px;
     }
 
@@ -100,16 +100,176 @@
 .header-middle {
   height: 100px;
   width: 1290px;
-display: inline-flex;
-align-items: center;
-justify-content: space-between;
-  
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
 
   &__icon {
     padding-right: 30px;
     height: 50px;
     width: 250px;
   }
+}
+.btn-img-katalog {
+  display: block;
+  &--active {
+    display: none;
+  }
+}
+.btn-img-katalog-close {
+  display: none;
+  &--active {
+    display: block;
+  }
+}
+.header-middle__katalog{
+ transition: all 0.4s ease;
+}
+.header-middle__katalog-wrap{
+  transition: all 0.4s ease;
+}
+.catalog {
+  display: none;
+ transition: all 0.4s ease;
+
+&--active{
+ 
+  display: block;
+  
+}
+  &__wrap {
+    position: relative;
+     min-height: auto;
+   
+  }
+}
+
+.catalog__list {
+  width: 300px;
+ 
+
+  z-index: 1000;
+
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+ 
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0px 0px 15px 0px #0000001f;
+
+  right: -15px;
+  top: 37px;
+
+  padding: 8px 0;
+  margin: 8px 0;
+   
+
+  &-links-item {
+    &:hover{
+      
+    }
+    border-right: 5px solid #FFBC57;
+    padding: 10px 0 10px 30px;
+    transition: all 0.2s ease;
+    & path {
+      transition: all 0.2s ease;
+    }
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &--right {
+      display: flex;
+      align-items: center;
+      color: $Dark;
+    }
+
+    &--left {
+      display: flex;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--img {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      
+      background-color: $Yellow;
+     
+      & path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+
+
+.catalog__flyouts {
+  // display: none;
+  position: absolute;
+   min-width: 320px;
+ 
+  min-height: 100%;
+
+  z-index: 1000;
+
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  // display: flex;
+  border-radius: 0px 8px 8px 0px;
+  // box-shadow: 0px 0px 15px 0px #0000001f;
+padding: 8px 0;
+ left:100%;
+ top: 0px;
+ &--active{
+  display: block;
+ }
+ &__item{
+    padding: 10px 20px 0 30px;
+  
+ }
+
+ &__item-list{ 
+
+  & a{
+    
+    font-size: 19px;
+    line-height: 40px;
+    transition: all 0.2s ease;
+    &:hover{
+      color:$Yellow;
+    }
+  }
+ }
+ 
+ 
+
+
+ 
+
+}
+.catalog__list-links-item:hover>.catalog__flyouts{
+display: block;
+}
+.catalog__flyouts{
+  display: none;
+  &--active{
+    display: block;
+  }
+}
+
+
+
+
+.header-bottom-wrap--active-kat,
+.main--active-kat,
+.footer--active-kat {
+  z-index: 999;
+  filter: blur(2.5px);
+  background: rgba(27, 26, 26, 0.8);
 }
 
 .header-middle__serch {
@@ -145,77 +305,59 @@ justify-content: space-between;
   right: 15px;
 }
 
-
-
-
 .header-middle__tel {
-  
+  & a {
+    transition: all 0.3s linear;
 
-& a{
-transition: all 0.3s linear ;
+    &:hover {
+      color: $Yellow;
+    }
+  }
 
-&:hover{
-
-color:$Yellow;
-}
-}
- 
-  &--img{
+  &--img {
     padding-right: 10px;
   }
 
-&-wrap{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-margin-left: 10px;
-margin-right: 10px;
-width: 270px;
-padding: 20px 0 25px;
- transition: all 0.3s ease;
-
- 
-
-  // padding: 20px;
-  
-&--active{
- position: relative;
-  top: 42px;
- left: 0;
-  
-   background-color: rgb(255, 255, 255);
-  
-      border-radius: 8px;
-      box-shadow: 0px 0px 15px 0px #0000001f;
-
-
-
-
-}
- 
-
-  &--onetel{
-    //  width: 230px;
-  height: 50px; 
+  &-wrap {
     display: flex;
     align-items: center;
-    //  padding: 0 24px 0 20px;
-
-
-    
-   
-  }
-  &--maxtel{
-    
     flex-direction: column;
-    align-items: satar;
-    padding-left: 60px;
-  display: none;
-    &--active{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 270px;
+    padding: 20px 0 25px;
+    transition: all 0.3s ease;
+
+    // padding: 20px;
+
+    &--active {
+      position: relative;
+      top: 42px;
+      left: 0;
+
+      background-color: rgb(255, 255, 255);
+
+      border-radius: 8px;
+      box-shadow: 0px 0px 15px 0px #0000001f;
+    }
+
+    &--onetel {
+      //  width: 230px;
+      height: 50px;
       display: flex;
+      align-items: center;
+      //  padding: 0 24px 0 20px;
+    }
+    &--maxtel {
+      flex-direction: column;
+      align-items: satar;
+      padding-left: 60px;
+      display: none;
+      &--active {
+        display: flex;
+      }
     }
   }
-}
   & p {
     font-size: 13px;
     line-height: 22px;
@@ -233,24 +375,18 @@ padding: 20px 0 25px;
     height: 24px;
     margin-left: 15px;
   }
-  & button{
+  & button {
     @extend %ProximaNova600;
-     color: $Yellow;
-       font-size: 20px;
+    color: $Yellow;
+    font-size: 20px;
     line-height: 28px;
   }
-
 }
-
-
-
-
 
 .header-middle__menu {
   display: flex;
   justify-content: space-between;
-//  padding-left: 30px;
- 
+  //  padding-left: 30px;
 }
 
 .header-middle__menu--like {
@@ -307,8 +443,8 @@ padding: 20px 0 25px;
   }
 }
 
-.header-bottom__left--item+.header-bottom__left--item,
-.header-bottom__right--item+.header-bottom__right--item {
+.header-bottom__left--item + .header-bottom__left--item,
+.header-bottom__right--item + .header-bottom__right--item {
   padding-left: 30px;
 }
 
@@ -343,7 +479,6 @@ padding: 20px 0 25px;
   grid-row: 2;
   margin-left: 0;
 
-  
   &__links {
     padding-bottom: 20px;
   }
@@ -352,7 +487,7 @@ padding: 20px 0 25px;
   .footer__sochial__messenger__links {
     display: flex;
 
-    & a+a {
+    & a + a {
       padding-left: 15px;
     }
   }
@@ -364,7 +499,7 @@ padding: 20px 0 25px;
   &__card {
     display: flex;
 
-    & img+img {
+    & img + img {
       padding-left: 20px;
     }
   }
