@@ -40,14 +40,16 @@ function images() {
 
 function scripts() {
   return src([
-    'node_modules/jquery/dist/jquery.js',
-   
-    'app/js/main.js'
+    "node_modules/jquery/dist/jquery.js",
+    // "node_modules/swiper/swiper-bundle.js",
+    // "node_modules/swiper/swiper-bundle.js.map",
+
+    "app/js/main.js",
   ])
-    .pipe(concat('main.min.js'))
+    .pipe(concat("main.min.js"))
     .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
+    .pipe(dest("app/js"))
+    .pipe(browserSync.stream());
 }
 
 
