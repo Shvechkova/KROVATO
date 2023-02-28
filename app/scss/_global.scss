@@ -4,7 +4,7 @@ body {
   @extend %ProximaNova400;
   font-size: 16px;
   line-height: 30px;
-  
+  overflow-x: hidden;
 }
 a{
   color:$Grey;
@@ -16,7 +16,7 @@ ul{
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background-color: #E3E2E2;
+  background-color: #F5F5F5;
 }
 
 .main {
@@ -31,35 +31,50 @@ ul{
   margin: 0 auto;
   padding: 0 15px;
 }
-
+p{
+  color:$Dark;
+}
 
 h1{
   @extend %ProximaNova600;
   font-size: 40px;
   line-height: 48px;
+  color:$Dark;
 }
 
 h2{
   @extend %ProximaNova600;
   font-size: 30px;
   line-height: 40px;
+  color:$Dark;
 }
 
 h3{
   @extend %ProximaNova600;
   font-size: 26px;
   line-height: 34px;
+  color:$Dark;
 }
 
 h4{
   @extend %ProximaNova600;
   font-size: 20px;
   line-height: 28px;
+  color:$Dark;
 }
 h5{
   @extend %ProximaNova600;
   font-size: 19px;
   line-height: 24px;
+  color:$Dark;
+  
+}
+
+h6{
+  @extend %ProximaNova400;
+  font-size: 17px;
+  line-height: 24px;
+  color:$Dark;
   
 }
 
@@ -87,5 +102,17 @@ display: flex;
 padding: 11px 20px;
     }
 
+}
+
+*::-webkit-scrollbar {
+width: 6px;
+}
+
+*::-webkit-scrollbar-track {background: $Light;}
+
+*::-webkit-scrollbar-thumb {
+background-color: $Grey-light;
+border-radius: 0px;
+border: none;
 }
 

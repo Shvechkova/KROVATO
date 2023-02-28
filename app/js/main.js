@@ -75,7 +75,7 @@ $("body").on("click", function (event) {
 
 
 
-const swiper = new Swiper(".swiper", {
+const swiperr = new Swiper(".swiperr", {
 
  
   loop: true,
@@ -83,16 +83,41 @@ const swiper = new Swiper(".swiper", {
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",
+    clickable: true
+
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiperr-button-next",
+    prevEl: ".swiperr-button-prev",
   },
 
   // And if we need scrollbar
+ 
+});
+
+const akcii__swiper = new Swiper(".akcii__swiper", {
+   slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".akcii__swiper-prev",
+    prevEl: ".akcii__swiper-next",
+  },
+});
+
+const reviews_slaider = new Swiper(".reviews_slaider", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+
+  // If we need pagination
+
   scrollbar: {
-    el: ".swiper-scrollbar",
+    el: ".reviews_slaider-scrollbar",
+    draggable: true,
   },
 });
